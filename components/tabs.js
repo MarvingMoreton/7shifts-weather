@@ -130,23 +130,22 @@ export default function Weather() {
                       <Image
                         src={Cloud}
                         alt="google logo"
-                        width={50}
-                        height={50}
+                        width={140}
+                        height={140}
                         className={classes['google-image']}
                       />
-                      <div className={classes['degree-status']}>
-                        <span className={classes['degree']}>
-                          {' '}
+                      <div className={classes['status-box']}>
+                        <span className={classes['degrees']}>
                           {kelvinToCelsius(ottawaWeather.list[0].main.temp)}°
                         </span>
-                        <span>Clouds</span>
+                        <h3>Clouds</h3>
                       </div>
                     </div>
                   </div>
 
                   <div className={classes['row-2']}>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[0]}</h4>
+                      <h4> {nextDays[0].slice(0, 3)}</h4>
                       <Image
                         src={Cloud}
                         alt="google logo"
@@ -154,13 +153,12 @@ export default function Weather() {
                         height={70}
                         className={classes['google-image']}
                       />
-                      <span className={classes['degree']}>
-                        {' '}
+                      <span className={classes['degrees']}>
                         {kelvinToCelsius(ottawaWeather.list[1].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[1]}</h4>
+                      <h4> {nextDays[1].slice(0, 3)}</h4>
                       <Image
                         src={Cloud}
                         alt="google logo"
@@ -168,13 +166,13 @@ export default function Weather() {
                         height={70}
                         className={classes['google-image']}
                       />
-                      <span className={classes['degree']}>
+                      <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(ottawaWeather.list[10].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[2]}</h4>
+                      <h4> {nextDays[2].slice(0, 3)}</h4>
                       <Image
                         src={Cloud}
                         alt="google logo"
@@ -182,13 +180,13 @@ export default function Weather() {
                         height={70}
                         className={classes['google-image']}
                       />
-                      <span className={classes['degree']}>
+                      <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(ottawaWeather.list[18].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[3]}</h4>
+                      <h4> {nextDays[3].slice(0, 3)}</h4>
                       <Image
                         src={Cloud}
                         alt="google logo"
@@ -196,7 +194,7 @@ export default function Weather() {
                         height={70}
                         className={classes['google-image']}
                       />
-                      <span className={classes['degree']}>
+                      <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(ottawaWeather.list[26].main.temp)}°
                       </span>
@@ -218,22 +216,22 @@ export default function Weather() {
                       <Image
                         src={Cloud}
                         alt="google logo"
-                        width={50}
-                        height={50}
+                        width={140}
+                        height={140}
                         className={classes['google-image']}
                       />
-                      <div className={classes['degree-status']}>
-                        <span className={classes['degree']}>
+                      <div className={classes['status-box']}>
+                        <span className={classes['degrees']}>
                           {kelvinToCelsius(moscowWeather.list[0].main.temp)}°
                         </span>
-                        <span>Clouds</span>
+                        <h3>Clouds</h3>
                       </div>
                     </div>
                   </div>
 
                   <div className={classes['row-2']}>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[0]}</h4>
+                      <h4> {nextDays[0].slice(0, 3)}</h4>
                       <Image
                         src={Cloud}
                         alt="google logo"
@@ -241,13 +239,13 @@ export default function Weather() {
                         height={70}
                         className={classes['google-image']}
                       />
-                      <span className={classes['degree']}>
+                      <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(moscowWeather.list[1].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[1]}</h4>
+                      <h4> {nextDays[1].slice(0, 3)}</h4>
                       <Image
                         src={Cloud}
                         alt="google logo"
@@ -255,13 +253,12 @@ export default function Weather() {
                         height={70}
                         className={classes['google-image']}
                       />
-                      <span className={classes['degree']}>
-                        {' '}
+                      <span className={classes['degrees']}>
                         {kelvinToCelsius(moscowWeather.list[10].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[2]}</h4>
+                      <h4> {nextDays[2].slice(0, 3)}</h4>
                       <Image
                         src={Cloud}
                         alt="google logo"
@@ -269,13 +266,13 @@ export default function Weather() {
                         height={70}
                         className={classes['google-image']}
                       />
-                      <span className={classes['degree']}>
+                      <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(moscowWeather.list[18].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[3]}</h4>
+                      <h4> {nextDays[3].slice(0, 3)}</h4>
                       <Image
                         src={Cloud}
                         alt="google logo"
@@ -283,7 +280,7 @@ export default function Weather() {
                         height={70}
                         className={classes['google-image']}
                       />
-                      <span className={classes['degree']}>
+                      <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(moscowWeather.list[26].main.temp)}°
                       </span>
@@ -305,23 +302,23 @@ export default function Weather() {
                       <Image
                         src={Cloud}
                         alt="google logo"
-                        width={50}
-                        height={50}
+                        width={140}
+                        height={140}
                         className={classes['google-image']}
                       />
-                      <div className={classes['degree-status']}>
-                        <span className={classes['degree']}>
-                          {' '}
+                      <div className={classes['status-box']}>
+                        <span className={classes['degrees']}>
+
                           {kelvinToCelsius(tokyoWeather.list[0].main.temp)}°
                         </span>
-                        <span>Clouds</span>
+                        <h3>Clouds</h3>
                       </div>
                     </div>
                   </div>
 
                   <div className={classes['row-2']}>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[0]}</h4>
+                      <h4> {nextDays[0].slice(0, 3)}</h4>
                       <Image
                         src={Cloud}
                         alt="google logo"
@@ -329,13 +326,13 @@ export default function Weather() {
                         height={70}
                         className={classes['google-image']}
                       />
-                      <span className={classes['degree']}>
+                      <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(tokyoWeather.list[1].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[1]}</h4>
+                      <h4> {nextDays[1].slice(0, 3)}</h4>
                       <Image
                         src={Cloud}
                         alt="google logo"
@@ -343,13 +340,13 @@ export default function Weather() {
                         height={70}
                         className={classes['google-image']}
                       />
-                      <span className={classes['degree']}>
+                      <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(tokyoWeather.list[10].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[2]}</h4>
+                      <h4> {nextDays[2].slice(0, 3)}</h4>
                       <Image
                         src={Cloud}
                         alt="google logo"
@@ -357,13 +354,13 @@ export default function Weather() {
                         height={70}
                         className={classes['google-image']}
                       />
-                      <span className={classes['degree']}>
+                      <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(tokyoWeather.list[18].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[3]}</h4>
+                      <h4> {nextDays[3].slice(0, 3)}</h4>
                       <Image
                         src={Cloud}
                         alt="google logo"
@@ -371,7 +368,7 @@ export default function Weather() {
                         height={70}
                         className={classes['google-image']}
                       />
-                      <span className={classes['degree']}>
+                      <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(tokyoWeather.list[26].main.temp)}°
                       </span>

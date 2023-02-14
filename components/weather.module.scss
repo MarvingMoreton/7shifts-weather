@@ -1,33 +1,32 @@
-@import "../styles/_variables";
+@import '../styles/_variables';
 
 .tab-container {
   padding: 3.2rem;
   margin: 0 auto;
 }
 .weather-section {
-  background-color: #EEF7FB;
+  background-color: #eef7fb;
   margin: 0 auto;
-  padding: 3.2rem 6.4rem;
+  padding: 3.2rem 28rem;
 }
-
 
 .tab-sections {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 3.2rem;
-  background-color: #EEF7FB;
+  background-color: #eef7fb;
 }
 
 .tab-sections {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .tab-grid {
   // margin: 0 auto;
   // padding: 0 3.2rem;
   border: 4px solid white;
-  border-radius: 12px;
+  border-radius: 14px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -36,7 +35,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.6rem 0 3.2rem 0;
+  padding: 4.4rem 0 8rem 0;
   gap: 2rem;
 }
 
@@ -44,32 +43,45 @@
   font-size: 2.4rem;
 }
 
-
 .weather-box {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
 }
 
-.degree-status {
+.status-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.status-box > span {
+  color: $black-text;
+  font-weight: 500;
+  font-size: 9rem;
+}
+
+.status-box > p {
+  font-size: 4.4rem;
+  font-weight: 300;
+
 }
 
 .row-2 {
   display: grid;
-	grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-content: center;
   border-top: 4px solid white;
 }
-.row-2 > .day-box {
+.day-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding:1.4rem 3.2rem;
+  padding: 3.2rem 1.6rem;
   gap: 0.8rem;
 }
 
@@ -78,8 +90,45 @@
 }
 
 
-.degree {
+
+.degrees {
   color: $black-text;
-  font-weight: 600;
-  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 3.8rem;
+}
+
+/**** MEDIA QUERIES ****/
+
+/**************************/
+/* BELOW 1200px (desktops) */
+/**************************/
+@media (max-width: 75em) {
+  .row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/**************************/
+/* BELOW 1024px (Small screens + laptops) */
+/**************************/
+@media (max-width: 64em) {
+}
+
+/**************************/
+/* BELOW 850px (tablets) */
+/**************************/
+@media (max-width: 53em) {
+}
+
+/**************************/
+/* BELOW 750px */
+/**************************/
+@media (max-width: 47em) {
+}
+
+/**************************/
+/* BELOW 480px (Mobile devices) */
+/**************************/
+
+@media (max-width: 30em) {
 }
