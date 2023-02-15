@@ -3,7 +3,6 @@ import React from 'react';
 import classes from './weather.module.scss';
 import Tabs from './tabs';
 import Image from 'next/image';
-import Cloud from '../public/cloud.png';
 
 // From kelv to Celcius
 function kelvinToCelsius(kelvin) {
@@ -51,12 +50,6 @@ export default function Weather() {
 
   const nextDays = nextFiveDays();
 
-  // `https://api.openweathermap.org/data/2.5/weather?lat=75.69&lon=10.99&appid=2c701a18f96047c7f8f0980932225e89`
-
-  // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-
-  // `https://api.openweathermap.org/data/2.5/weather?q=Ottawa&units=metric&appid=${OPEN_WEATHER_API_key}`
-
   useEffect(() => {
     async function fetchWeather() {
       // OTTAWA
@@ -64,7 +57,7 @@ export default function Weather() {
         `https://api.openweathermap.org/data/2.5/forecast?lat=75.69&lon=10.99&appid=${OPEN_WEATHER_API_key}`
       );
       const ottawaData = await ottawaResponse.json();
-      console.log(ottawaData);
+      // console.log(ottawaData);
       setOttawaWeather(ottawaData);
 
       // MOSCOW
@@ -79,6 +72,8 @@ export default function Weather() {
         `https://api.openweathermap.org/data/2.5/forecast?lat=35.67&lon=139.65&appid=${OPEN_WEATHER_API_key}`
       );
       const tokyoData = await tokyoResponse.json();
+      console.log(tokyoData);
+
       setTokyoWeather(tokyoData);
 
       setLoading(false);
@@ -86,16 +81,63 @@ export default function Weather() {
 
     fetchWeather();
   }, []);
-  // console.log(ottawaWeather.list[0].main.temp);
-  // console.log(ottawaWeather.list[0].main.temp);
-  // console.log(kelvinToCelsius(ottawaWeather.list[0].main.temp));
-  // console.log(ottawaWeather.list[0].main.temp);
-  // console.log(ottawaWeatherweatherData.list[0].main.temp);
 
   if (loading) {
     return <div>Loading...</div>;
   }
+  const weatherIcon = {
+    drizzle: 'rain',
+    thunderstorm: 'thunderstorm',
+    rain: 'rain',
+    snow: 'snowflake',
+    clear: 'clear',
+    clouds: 'clouds',
+    mist: 'smog',
+    smoke: 'smog',
+    haze: 'smog',
+    dust: 'smog',
+    fog: 'smog',
+    sand: 'smog',
+    ash: 'smog',
+    squall: 'wind',
+    tornado: 'tornado'
+  };
 
+  const weatherType = [
+    'drizzle',
+    'thunderstorm',
+    'rain',
+    'snow',
+    'clear',
+    'clouds',
+    'mist',
+    'smoke',
+    'haze',
+    'dust',
+    'fog',
+    'sand',
+    'ash',
+    'squall',
+    'tornado'
+  ];
+
+  function getWeatherIcon(weather) {
+    const lowercaseWeather = weather.toLowerCase();
+
+    for (let i = 0; i < weatherType.length; i++) {
+      const lowercaseType = weatherType[i].toLowerCase();
+
+      if (lowercaseWeather.includes(lowercaseType)) {
+        return weatherIcon[lowercaseType];
+      }
+    }
+
+    return null;
+  }
+
+  console.log('weather type:');
+
+  console.log(getWeatherIcon(ottawaWeather.list[0].weather[0].main));
   return (
     <div className={classes['tab-container']}>
       <div className={classes['tab-sections']}>
@@ -128,31 +170,38 @@ export default function Weather() {
                     <h3>Today</h3>
                     <div className={classes['weather-box']}>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={140}
-                        height={140}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          ottawaWeather.list[0].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={100}
+                        height={100}
+                        className={classes.icon}
                       />
+
                       <div className={classes['status-box']}>
                         <span className={classes['degrees']}>
                           {kelvinToCelsius(ottawaWeather.list[0].main.temp)}°
                         </span>
-                        <h3>Clouds</h3>
+                        <h3>{ottawaWeather.list[0].weather[0].main}</h3>
                       </div>
                     </div>
                   </div>
 
                   <div className={classes['row-2']}>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[0].slice(0, 3)}</h4>
+                      <h4>{nextDays[0].slice(0, 3)}</h4>
+
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={70}
-                        height={70}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          ottawaWeather.list[1].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={54}
+                        height={54}
+                        className={classes.icon}
                       />
+
                       <span className={classes['degrees']}>
                         {kelvinToCelsius(ottawaWeather.list[1].main.temp)}°
                       </span>
@@ -160,12 +209,15 @@ export default function Weather() {
                     <div className={classes['day-box']}>
                       <h4> {nextDays[1].slice(0, 3)}</h4>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={70}
-                        height={70}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          ottawaWeather.list[10].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={54}
+                        height={54}
+                        className={classes.icon}
                       />
+
                       <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(ottawaWeather.list[10].main.temp)}°
@@ -174,12 +226,15 @@ export default function Weather() {
                     <div className={classes['day-box']}>
                       <h4> {nextDays[2].slice(0, 3)}</h4>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={70}
-                        height={70}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          ottawaWeather.list[18].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={54}
+                        height={54}
+                        className={classes.icon}
                       />
+
                       <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(ottawaWeather.list[18].main.temp)}°
@@ -188,12 +243,15 @@ export default function Weather() {
                     <div className={classes['day-box']}>
                       <h4> {nextDays[3].slice(0, 3)}</h4>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={70}
-                        height={70}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          ottawaWeather.list[26].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={54}
+                        height={54}
+                        className={classes.icon}
                       />
+
                       <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(ottawaWeather.list[26].main.temp)}°
@@ -214,12 +272,15 @@ export default function Weather() {
                     <h3>Today</h3>
                     <div className={classes['weather-box']}>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={140}
-                        height={140}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          moscowWeather.list[0].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={100}
+                        height={100}
+                        className={classes.icon}
                       />
+
                       <div className={classes['status-box']}>
                         <span className={classes['degrees']}>
                           {kelvinToCelsius(moscowWeather.list[0].main.temp)}°
@@ -233,11 +294,13 @@ export default function Weather() {
                     <div className={classes['day-box']}>
                       <h4> {nextDays[0].slice(0, 3)}</h4>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={70}
-                        height={70}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          moscowWeather.list[1].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={54}
+                        height={54}
+                        className={classes.icon}
                       />
                       <span className={classes['degrees']}>
                         {' '}
@@ -247,12 +310,15 @@ export default function Weather() {
                     <div className={classes['day-box']}>
                       <h4> {nextDays[1].slice(0, 3)}</h4>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={70}
-                        height={70}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          moscowWeather.list[10].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={54}
+                        height={54}
+                        className={classes.icon}
                       />
+
                       <span className={classes['degrees']}>
                         {kelvinToCelsius(moscowWeather.list[10].main.temp)}°
                       </span>
@@ -260,12 +326,15 @@ export default function Weather() {
                     <div className={classes['day-box']}>
                       <h4> {nextDays[2].slice(0, 3)}</h4>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={70}
-                        height={70}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          moscowWeather.list[18].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={54}
+                        height={54}
+                        className={classes.icon}
                       />
+
                       <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(moscowWeather.list[18].main.temp)}°
@@ -274,12 +343,15 @@ export default function Weather() {
                     <div className={classes['day-box']}>
                       <h4> {nextDays[3].slice(0, 3)}</h4>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={70}
-                        height={70}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          moscowWeather.list[26].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={54}
+                        height={54}
+                        className={classes.icon}
                       />
+
                       <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(moscowWeather.list[26].main.temp)}°
@@ -300,15 +372,17 @@ export default function Weather() {
                     <h3>Today</h3>
                     <div className={classes['weather-box']}>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={140}
-                        height={140}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          tokyoWeather.list[0].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={100}
+                        height={100}
+                        className={classes.icon}
                       />
+
                       <div className={classes['status-box']}>
                         <span className={classes['degrees']}>
-
                           {kelvinToCelsius(tokyoWeather.list[0].main.temp)}°
                         </span>
                         <h3>Clouds</h3>
@@ -320,12 +394,15 @@ export default function Weather() {
                     <div className={classes['day-box']}>
                       <h4> {nextDays[0].slice(0, 3)}</h4>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={70}
-                        height={70}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          tokyoWeather.list[1].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={54}
+                        height={54}
+                        className={classes.icon}
                       />
+
                       <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(tokyoWeather.list[1].main.temp)}°
@@ -334,12 +411,15 @@ export default function Weather() {
                     <div className={classes['day-box']}>
                       <h4> {nextDays[1].slice(0, 3)}</h4>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={70}
-                        height={70}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          tokyoWeather.list[10].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={54}
+                        height={54}
+                        className={classes.icon}
                       />
+
                       <span className={classes['degrees']}>
                         {' '}
                         {kelvinToCelsius(tokyoWeather.list[10].main.temp)}°
@@ -348,11 +428,13 @@ export default function Weather() {
                     <div className={classes['day-box']}>
                       <h4> {nextDays[2].slice(0, 3)}</h4>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={70}
-                        height={70}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          tokyoWeather.list[18].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={54}
+                        height={54}
+                        className={classes.icon}
                       />
                       <span className={classes['degrees']}>
                         {' '}
@@ -362,14 +444,16 @@ export default function Weather() {
                     <div className={classes['day-box']}>
                       <h4> {nextDays[3].slice(0, 3)}</h4>
                       <Image
-                        src={Cloud}
-                        alt="google logo"
-                        width={70}
-                        height={70}
-                        className={classes['google-image']}
+                        src={`${getWeatherIcon(
+                          tokyoWeather.list[26].weather[0].main
+                        )}.svg`}
+                        alt="weather icon"
+                        width={54}
+                        height={54}
+                        className={classes.icon}
                       />
+
                       <span className={classes['degrees']}>
-                        {' '}
                         {kelvinToCelsius(tokyoWeather.list[26].main.temp)}°
                       </span>
                     </div>
