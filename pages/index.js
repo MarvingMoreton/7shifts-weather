@@ -17,19 +17,18 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps() {
-  // Not exposing API key
-  const apiKey = process.env.OPEN_WEATHER_API_KEY
-
   // Refactoring to fetch the data at build time
+  const OPEN_WEATHER_API_key = '2c701a18f96047c7f8f0980932225e89';
+
   const ottawaUrl =
     'https://api.openweathermap.org/data/2.5/forecast?lat=75.69&lon=10.99&appid=' +
-    apiKey;
+    OPEN_WEATHER_API_key;
   const moscowUrl =
     'https://api.openweathermap.org/data/2.5/forecast?lat=55.75&lon=37.61&appid=' +
-    apiKey;
+    OPEN_WEATHER_API_key;
   const tokyoUrl =
     'https://api.openweathermap.org/data/2.5/forecast?lat=35.67&lon=139.65&appid=' +
-    apiKey;
+    OPEN_WEATHER_API_key;
 
   const [ottawaResponse, moscowResponse, tokyoResponse] = await Promise.all([
     fetch(ottawaUrl),
