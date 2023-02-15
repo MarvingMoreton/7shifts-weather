@@ -133,6 +133,10 @@
   .weather-section {
     padding: 3.2rem 8rem;
   }
+
+  .tab-sections > h2 {
+    font-size: 2rem
+  }
 }
 
 /**************************/
@@ -162,6 +166,9 @@
   .day-box > h4 {
     font-size: 2.4rem;
   }
+  .status-box > span {
+    font-size: 8rem;
+  }
 }
 
 /**************************/
@@ -171,6 +178,18 @@
 @media (max-width: 30em) {
 
   .weather-section {
-    padding: 3.2rem 6.4rem;
+    padding: 3.2rem;
   }
+
+  .row-1--img-box > img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+.tab-sections {
+gap: 1rem;
+flex-direction: column;
+}
+
+
 }

@@ -168,15 +168,17 @@ export default function Weather(props) {
                   <div className={classes['row-1']}>
                     <h3>Today</h3>
                     <div className={classes['weather-box']}>
-                      <Image
-                        src={`${getWeatherIcon(
-                          ottawaWeather.list[0].weather[0].main
-                        )}.svg`}
-                        alt="weather icon"
-                        width={120}
-                        height={120}
-                        className={classes.icon}
-                      />
+                      <div className={classes['row-1--img-box']}>
+                        <Image
+                          src={`${getWeatherIcon(
+                            ottawaWeather.list[0].weather[0].main
+                          )}.svg`}
+                          alt="weather icon"
+                          width={120}
+                          height={120}
+                          className={classes.icon}
+                        />
+                      </div>
                       <div className={classes['status-box']}>
                         <span className={classes['degrees']}>
                           {kelvinToCelsius(ottawaWeather.list[0].main.temp)}°
@@ -275,15 +277,17 @@ export default function Weather(props) {
                   <div className={classes['row-1']}>
                     <h3>Today</h3>
                     <div className={classes['weather-box']}>
-                      <Image
-                        src={`${getWeatherIcon(
-                          moscowWeather.list[0].weather[0].main
-                        )}.svg`}
-                        alt="weather icon"
-                        width={120}
-                        height={120}
-                        className={classes.icon}
-                      />
+                      <div className={classes['row-1--img-box']}>
+                        <Image
+                          src={`${getWeatherIcon(
+                            moscowWeather.list[0].weather[0].main
+                          )}.svg`}
+                          alt="weather icon"
+                          width={120}
+                          height={120}
+                          className={classes.icon}
+                        />
+                      </div>
                       <div className={classes['status-box']}>
                         <span className={classes['degrees']}>
                           {kelvinToCelsius(moscowWeather.list[0].main.temp)}°
@@ -380,15 +384,17 @@ export default function Weather(props) {
                   <div className={classes['row-1']}>
                     <h3>Today</h3>
                     <div className={classes['weather-box']}>
-                      <Image
-                        src={`${getWeatherIcon(
-                          tokyoWeather.list[0].weather[0].main
-                        )}.svg`}
-                        alt="weather icon"
-                        width={120}
-                        height={120}
-                        className={classes.icon}
-                      />
+                      <div className={classes['row-1--img-box']}>
+                        <Image
+                          src={`${getWeatherIcon(
+                            tokyoWeather.list[0].weather[0].main
+                          )}.svg`}
+                          alt="weather icon"
+                          width={120}
+                          height={120}
+                          className={classes.icon}
+                        />
+                      </div>
 
                       <div className={classes['status-box']}>
                         <span className={classes['degrees']}>
