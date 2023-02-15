@@ -149,7 +149,7 @@ export default function Weather(props) {
                       <div className={classes['img-box']}>
                         <Image
                           src={`${getWeatherIcon(
-                            ottawaWeather.list[1].weather[0].main
+                            ottawaWeather.list[8].weather[0].main
                           )}.svg`}
                           alt="weather icon"
                           width={54}
@@ -158,7 +158,7 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {kelvinToCelsius(ottawaWeather.list[1].main.temp)}°
+                        {kelvinToCelsius(ottawaWeather.list[8].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
@@ -167,7 +167,7 @@ export default function Weather(props) {
                       <div className={classes['img-box']}>
                         <Image
                           src={`${getWeatherIcon(
-                            ottawaWeather.list[10].weather[0].main
+                            ottawaWeather.list[15].weather[0].main
                           )}.svg`}
                           alt="weather icon"
                           width={54}
@@ -176,7 +176,7 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {kelvinToCelsius(ottawaWeather.list[10].main.temp)}°
+                        {kelvinToCelsius(ottawaWeather.list[15].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
@@ -184,7 +184,7 @@ export default function Weather(props) {
                       <div className={classes['img-box']}>
                         <Image
                           src={`${getWeatherIcon(
-                            ottawaWeather.list[18].weather[0].main
+                            ottawaWeather.list[23].weather[0].main
                           )}.svg`}
                           alt="weather icon"
                           width={54}
@@ -193,16 +193,16 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {kelvinToCelsius(ottawaWeather.list[18].main.temp)}°
+                        {kelvinToCelsius(ottawaWeather.list[23].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
-                      <h4> {nextDays[3].slice(0, 3)}</h4>
+                      <h4>{nextDays[3].slice(0, 3)}</h4>
 
                       <div className={classes['img-box']}>
                         <Image
                           src={`${getWeatherIcon(
-                            ottawaWeather.list[26].weather[0].main
+                            ottawaWeather.list[30].weather[0].main
                           )}.svg`}
                           alt="weather icon"
                           width={54}
@@ -212,7 +212,7 @@ export default function Weather(props) {
                       </div>
 
                       <span className={classes['degrees']}>
-                        {kelvinToCelsius(ottawaWeather.list[26].main.temp)}°
+                        {kelvinToCelsius(ottawaWeather.list[30].main.temp)}°
                       </span>
                     </div>
                   </div>
@@ -256,7 +256,7 @@ export default function Weather(props) {
                       <div className={classes['img-box']}>
                         <Image
                           src={`${getWeatherIcon(
-                            moscowWeather.list[1].weather[0].main
+                            moscowWeather.list[8].weather[0].main
                           )}.svg`}
                           alt="weather icon"
                           width={54}
@@ -265,7 +265,7 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {kelvinToCelsius(moscowWeather.list[1].main.temp)}°
+                        {kelvinToCelsius(moscowWeather.list[8].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
@@ -274,7 +274,7 @@ export default function Weather(props) {
                       <div className={classes['img-box']}>
                         <Image
                           src={`${getWeatherIcon(
-                            moscowWeather.list[10].weather[0].main
+                            moscowWeather.list[15].weather[0].main
                           )}.svg`}
                           alt="weather icon"
                           width={54}
@@ -283,7 +283,7 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {kelvinToCelsius(moscowWeather.list[10].main.temp)}°
+                        {kelvinToCelsius(moscowWeather.list[15].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
@@ -291,7 +291,7 @@ export default function Weather(props) {
                       <div className={classes['img-box']}>
                         <Image
                           src={`${getWeatherIcon(
-                            moscowWeather.list[18].weather[0].main
+                            moscowWeather.list[23].weather[0].main
                           )}.svg`}
                           alt="weather icon"
                           width={54}
@@ -300,7 +300,7 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {kelvinToCelsius(moscowWeather.list[18].main.temp)}°
+                        {kelvinToCelsius(moscowWeather.list[23].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
@@ -308,7 +308,7 @@ export default function Weather(props) {
                       <div className={classes['img-box']}>
                         <Image
                           src={`${getWeatherIcon(
-                            moscowWeather.list[26].weather[0].main
+                            moscowWeather.list[30].weather[0].main
                           )}.svg`}
                           alt="weather icon"
                           width={54}
@@ -317,7 +317,7 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {kelvinToCelsius(moscowWeather.list[26].main.temp)}°
+                        {kelvinToCelsius(moscowWeather.list[30].main.temp)}°
                       </span>
                     </div>
                   </div>
@@ -361,7 +361,7 @@ export default function Weather(props) {
                       <div className={classes['img-box']}>
                         <Image
                           src={`${getWeatherIcon(
-                            tokyoWeather.list[1].weather[0].main
+                            tokyoWeather.list[8].weather[0].main
                           )}.svg`}
                           alt="weather icon"
                           width={54}
@@ -370,8 +370,7 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {' '}
-                        {kelvinToCelsius(tokyoWeather.list[1].main.temp)}°
+                        {kelvinToCelsius(tokyoWeather.list[8].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
@@ -380,7 +379,7 @@ export default function Weather(props) {
                       <div className={classes['img-box']}>
                         <Image
                           src={`${getWeatherIcon(
-                            tokyoWeather.list[10].weather[0].main
+                            tokyoWeather.list[15].weather[0].main
                           )}.svg`}
                           alt="weather icon"
                           width={54}
@@ -390,7 +389,7 @@ export default function Weather(props) {
                       </div>
 
                       <span className={classes['degrees']}>
-                        {kelvinToCelsius(tokyoWeather.list[10].main.temp)}°
+                        {kelvinToCelsius(tokyoWeather.list[15].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
@@ -398,7 +397,7 @@ export default function Weather(props) {
                       <div className={classes['img-box']}>
                         <Image
                           src={`${getWeatherIcon(
-                            tokyoWeather.list[18].weather[0].main
+                            tokyoWeather.list[23].weather[0].main
                           )}.svg`}
                           alt="weather icon"
                           width={54}
@@ -407,7 +406,7 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {kelvinToCelsius(tokyoWeather.list[18].main.temp)}°
+                        {kelvinToCelsius(tokyoWeather.list[23].main.temp)}°
                       </span>
                     </div>
                     <div className={classes['day-box']}>
@@ -415,7 +414,7 @@ export default function Weather(props) {
                       <div className={classes['img-box']}>
                         <Image
                           src={`${getWeatherIcon(
-                            tokyoWeather.list[26].weather[0].main
+                            tokyoWeather.list[30].weather[0].main
                           )}.svg`}
                           alt="weather icon"
                           width={54}
@@ -425,7 +424,7 @@ export default function Weather(props) {
                       </div>
 
                       <span className={classes['degrees']}>
-                        {kelvinToCelsius(tokyoWeather.list[26].main.temp)}°
+                        {kelvinToCelsius(tokyoWeather.list[30].main.temp)}°
                       </span>
                     </div>
                   </div>

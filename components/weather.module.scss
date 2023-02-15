@@ -167,7 +167,10 @@
     font-size: 2.4rem;
   }
   .status-box > span {
-    font-size: 8rem;
+    font-size: 7.4rem;
+  }
+  .status-box > h3 {
+    font-size: 2.4rem;
   }
 }
 
@@ -178,6 +181,9 @@
 @media (max-width: 30em) {
   .weather-section {
     padding: 3.2rem;
+  }
+  .weather-box {
+    gap: 1rem;
   }
 
   .row-1--img-box > img {
