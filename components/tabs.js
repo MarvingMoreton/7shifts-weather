@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
 import classes from './weather.module.scss';
-import Tabs from './tabs';
 import Image from 'next/image';
 
 // Function to go from Kelv measure to Celcius
@@ -40,51 +39,6 @@ export default function Weather(props) {
   const handleTabClick = (tabIndex) => {
     setActiveTab(tabIndex);
   };
-
-  // Previous fetching version with useEffect:
-  // const OPEN_WEATHER_API_key = '2c701a18f96047c7f8f0980932225e89';
-
-  // const [ottawaWeather, setOttawaWeather] = useState(null);
-  // const [moscowWeather, setMoscowWeather] = useState(null);
-  // const [tokyoWeather, setTokyoWeather] = useState(null);
-
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   async function fetchWeather() {
-  //     // OTTAWA
-  //     const ottawaResponse = await fetch(
-  //       `https://api.openweathermap.org/data/2.5/forecast?lat=75.69&lon=10.99&appid=${OPEN_WEATHER_API_key}`
-  //     );
-  //     const ottawaData = await ottawaResponse.json();
-  //     // console.log(ottawaData);
-  //     setOttawaWeather(ottawaData);
-
-  //     // MOSCOW
-  //     const moscowResponse = await fetch(
-  //       `https://api.openweathermap.org/data/2.5/forecast?lat=55.75&lon=37.61&appid=${OPEN_WEATHER_API_key}`
-  //     );
-  //     const moscowData = await moscowResponse.json();
-  //     setMoscowWeather(moscowData);
-
-  //     // TOKYO
-  //     const tokyoResponse = await fetch(
-  //       `https://api.openweathermap.org/data/2.5/forecast?lat=35.67&lon=139.65&appid=${OPEN_WEATHER_API_key}`
-  //     );
-  //     const tokyoData = await tokyoResponse.json();
-  //     console.log(tokyoData);
-
-  //     setTokyoWeather(tokyoData);
-
-  //     setLoading(false);
-  //   }
-
-  //   fetchWeather();
-  // }, []);
-
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
 
   const nextDays = nextFiveDays();
   const weatherIcon = {
@@ -222,7 +176,6 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {' '}
                         {kelvinToCelsius(ottawaWeather.list[10].main.temp)}°
                       </span>
                     </div>
@@ -240,7 +193,6 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {' '}
                         {kelvinToCelsius(ottawaWeather.list[18].main.temp)}°
                       </span>
                     </div>
@@ -348,7 +300,6 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {' '}
                         {kelvinToCelsius(moscowWeather.list[18].main.temp)}°
                       </span>
                     </div>
@@ -366,7 +317,6 @@ export default function Weather(props) {
                         />
                       </div>
                       <span className={classes['degrees']}>
-                        {' '}
                         {kelvinToCelsius(moscowWeather.list[26].main.temp)}°
                       </span>
                     </div>
@@ -440,7 +390,6 @@ export default function Weather(props) {
                       </div>
 
                       <span className={classes['degrees']}>
-                        {' '}
                         {kelvinToCelsius(tokyoWeather.list[10].main.temp)}°
                       </span>
                     </div>

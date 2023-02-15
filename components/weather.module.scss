@@ -135,7 +135,7 @@
   }
 
   .tab-sections > h2 {
-    font-size: 2rem
+    font-size: 2rem;
   }
 }
 
@@ -176,7 +176,6 @@
 /**************************/
 
 @media (max-width: 30em) {
-
   .weather-section {
     padding: 3.2rem;
   }
@@ -186,10 +185,8 @@
     height: 8rem;
   }
 
-.tab-sections {
-gap: 1rem;
-flex-direction: column;
-}
-
-
+  .tab-sections {
+    gap: 1rem;
+    flex-direction: column;
+  }
 }
